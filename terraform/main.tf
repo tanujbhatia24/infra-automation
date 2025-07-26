@@ -72,22 +72,23 @@ resource "aws_instance" "ecommerce" {
 
   user_data = <<-EOF
               #!/bin/bash
-              apt update -y
-              apt install docker.io -y
-              systemctl start docker
-              docker pull tanujbhatia24/user-service
-              docker pull tanujbhatia24/product-service
-              docker pull tanujbhatia24/order-service
-              docker pull tanujbhatia24/cart-service
-              docker pull tanujbhatia24/frontend-service
+              sudo apt update -y
+              sudo apt install docker.io -y
+              sudo systemctl start docker
+              sudo docker pull tanujbhatia24/user-service
+              sudo docker pull tanujbhatia24/product-service
+              sudo docker pull tanujbhatia24/order-service
+              sudo docker pull tanujbhatia24/cart-service
+              sudo docker pull tanujbhatia24/frontend-service
 
-              docker run -d -p 3001:3001 tanujbhatia24/user-service
-              docker run -d -p 3002:3002 tanujbhatia24/product-service
-              docker run -d -p 3003:3003 tanujbhatia24/order-service
-              docker run -d -p 3004:3004 tanujbhatia24/cart-service
-              docker run -d -p 3000:3000 tanujbhatia24/frontend-service
+              sudo docker network create ecommerce-net
+              sudo docker run -d --name mongodb --network ecommerce-net -p 27017:27017 mongo
 
-              docker run -d -p 27017:27017 --name mongodb mongo
+              sudo docker run -d --name user-service --network ecommerce-net -p 3001:3001 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/user-service
+              sudo docker run -d --name product-service --network ecommerce-net -p 3002:3002 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/product-service
+              sudo docker run -d --name order-service --network ecommerce-net -p 3004:3004 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/order-service
+              sudo docker run -d --name cart-service --network ecommerce-net -p 3003:3003 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/cart-service
+              sudo docker run -d --name frontend-service --network ecommerce-net -p 3000:3000 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/frontend-service
               EOF
 
   tags = {
