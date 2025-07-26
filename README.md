@@ -1,6 +1,6 @@
 # Multi-Service Node.js E-commerce Application Deployment with Terraform and Docker
 
-This project demonstrates how to deploy a Dockerized multi-service Node.js application on AWS EC2 using Terraform. It includes 4 backend services (`user`, `products`, `orders`, `cart`) and 1 frontend service.
+This project demonstrates how to deploy a Dockerized multi-service Node.js application on AWS EC2 using Terraform. It includes 4 backend services (`user`, `products`, `orders`, `cart`), 1 mongo service and 1 frontend service.
 
 ---
 
