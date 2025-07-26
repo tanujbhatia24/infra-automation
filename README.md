@@ -104,6 +104,15 @@ terraform apply -auto-approve
 - Backend services return expected text
 
 ---
+
+## Snapshot
+- dokcer images creation<br>
+<img width="809" height="154" alt="image" src="https://github.com/user-attachments/assets/345318b6-a321-4191-b682-ce0855377e0c" /><br>
+- docker frontend local testing<br>
+
+
+---
+
 ## Clean Up
 ```bash
 terraform destroy -auto-approve
