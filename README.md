@@ -154,11 +154,13 @@ terraform destroy -auto-approve
 <img width="447" height="241" alt="image" src="https://github.com/user-attachments/assets/d0ae60a7-7aaa-4cdf-950e-02d0903269e5" /><br>
 - terraform destroy output<br>
 <img width="988" height="384" alt="image" src="https://github.com/user-attachments/assets/b395298a-4bf7-4fe8-b63c-d973247b2182" /><br>
+- AWS EC2 snapshots<br>
+<img width="1340" height="251" alt="image" src="https://github.com/user-attachments/assets/62073a6d-e846-4b98-ae5e-69f68a9fa4e9" /><br>
 ---
 
-## Author
-Tanuj Bhatia
-DevOps Automation Engineer
-DockerHub: tanujbhatia24
+## Author<br>
+Tanuj Bhatia<br>
+DevOps Automation Engineer<br>
+DockerHub: tanujbhatia24<br>
 
 ---
