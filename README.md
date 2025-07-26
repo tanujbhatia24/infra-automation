@@ -136,6 +136,11 @@ terraform apply -auto-approve
 - After deployment, Terraform will output:
   ```bash
   frontend_url = http://<PUBLIC_IP>
+  backend_urls :
+    user = http://<PUBLIC_IP>:3001
+    product = http://<PUBLIC_IP>:3002
+    cart = http://<PUBLIC_IP>:3003
+    order = http://<PUBLIC_IP>:3004
   ```
 - You can access:
   - Frontend:
@@ -144,8 +149,8 @@ terraform apply -auto-approve
   - Backend Services:
     - http://<PUBLIC_IP>:3001 → User
     - http://<PUBLIC_IP>:3002 → Products
-    - http://<PUBLIC_IP>:3004 → Orders
     - http://<PUBLIC_IP>:3003 → Cart
+    - http://<PUBLIC_IP>:3004 → Orders
 
 - Each backend returns: "ServiceName Service Running"
 
