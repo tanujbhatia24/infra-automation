@@ -121,8 +121,8 @@ terraform apply -auto-approve
 <img width="889" height="161" alt="image" src="https://github.com/user-attachments/assets/a2cb8690-3c76-41f8-8403-bedeb84f3691" /><br>
 <img width="1377" height="402" alt="image" src="https://github.com/user-attachments/assets/3596600a-b538-405a-9daa-ae63e33a7c35" /><br>
 - docker containers<br>
-<img width="1509" height="254" alt="image" src="https://github.com/user-attachments/assets/7b0d1eca-17fc-43b1-9dca-dededc205338" /><br>
-<img width="1374" height="602" alt="image" src="https://github.com/user-attachments/assets/883a9ada-eac4-4530-b865-ffb5b674391d" /><br>
+<img width="1561" height="318" alt="image" src="https://github.com/user-attachments/assets/cdbdd41a-8704-4f7e-9200-d5a979f41ed2" /><br>
+<img width="1404" height="465" alt="image" src="https://github.com/user-attachments/assets/77f02f14-3cf3-48c6-b944-8c02a4e43cd8" /><br>
 - docker frontend local testing<br>
 <img width="1855" height="773" alt="image" src="https://github.com/user-attachments/assets/0f2f60c3-dc7a-4d0d-8b68-657196c4ec61" /><br>
 - docker backend services<br>
