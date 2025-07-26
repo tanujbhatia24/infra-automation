@@ -126,8 +126,10 @@ terraform apply -auto-approve
 - docker frontend local testing<br>
 <img width="1855" height="773" alt="image" src="https://github.com/user-attachments/assets/0f2f60c3-dc7a-4d0d-8b68-657196c4ec61" /><br>
 - docker backend services<br>
-
-
+<img width="478" height="229" alt="image" src="https://github.com/user-attachments/assets/deece2c0-f4d4-499f-a5c7-8e887d553619" /><br>
+<img width="505" height="227" alt="image" src="https://github.com/user-attachments/assets/5025de0a-4b22-4144-81d9-acfd78ed9284" /><br>
+<img width="423" height="228" alt="image" src="https://github.com/user-attachments/assets/b749bd06-aaf5-48f5-a475-8f0bb4479960" /><br>
+<img width="412" height="233" alt="image" src="https://github.com/user-attachments/assets/5dbf652c-719f-46a3-b117-e78ccb80cb35" /><br>
 ---
 
 ## Clean Up
