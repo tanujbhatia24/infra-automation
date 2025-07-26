@@ -84,11 +84,11 @@ resource "aws_instance" "ecommerce" {
               sudo docker network create ecommerce-net
               sudo docker run -d --name mongodb --network ecommerce-net -p 27017:27017 mongo
 
-              sudo docker run -d --name user-service --network ecommerce-net -p 3001:3001 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/user-service
-              sudo docker run -d --name product-service --network ecommerce-net -p 3002:3002 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/product-service
-              sudo docker run -d --name order-service --network ecommerce-net -p 3004:3004 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/order-service
-              sudo docker run -d --name cart-service --network ecommerce-net -p 3003:3003 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/cart-service
-              sudo docker run -d --name frontend-service --network ecommerce-net -p 3000:3000 -e MONGO_URL=mongodb://mongodb:27017/userdb tanujbhatia24/frontend-service
+              sudo docker run -d --name user-service --network ecommerce-net -p 3001:3001 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts tanujbhatia24/user-service
+              sudo docker run -d --name product-service --network ecommerce-net -p 3002:3002 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts tanujbhatia24/product-service
+              sudo docker run -d --name order-service --network ecommerce-net -p 3004:3004 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts tanujbhatia24/order-service
+              sudo docker run -d --name cart-service --network ecommerce-net -p 3003:3003 -e MONGODB_URI=mongodb://mongodb:27017/ecommerce_carts tanujbhatia24/cart-service
+              sudo docker run -d --name frontend-service --network ecommerce-net -p 3000:3000 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts tanujbhatia24/frontend-service
               EOF
 
   tags = {
