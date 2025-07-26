@@ -10,9 +10,9 @@ This project demonstrates how to deploy a Dockerized multi-service Node.js appli
 |-----------|--------|-------------------------|
 | user      | 3001   | Handles user operations |
 | products  | 3002   | Manages product data    |
-| orders    | 3003   | Order management        |
-| cart      | 3004   | Cart functionality      |
-| frontend  | 80     | Displays homepage       |
+| orders    | 3004   | Order management        |
+| cart      | 3003   | Cart functionality      |
+| frontend  | 3000   | Displays homepage       |
 
 ---
 
