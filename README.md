@@ -116,6 +116,14 @@ terraform apply -auto-approve
 
 ---
 
+## Clean Up
+```bash
+terraform destroy -auto-approve
+```
+- Always destroy resources after testing to avoid charges.
+
+---
+
 ## Snapshot
 - dokcer images<br>
 <img width="889" height="161" alt="image" src="https://github.com/user-attachments/assets/a2cb8690-3c76-41f8-8403-bedeb84f3691" /><br>
@@ -144,14 +152,8 @@ terraform apply -auto-approve
 <img width="482" height="228" alt="image" src="https://github.com/user-attachments/assets/1e9edace-cd3f-4d70-8131-f6c882b46281" /><br>
 <img width="449" height="221" alt="image" src="https://github.com/user-attachments/assets/1f9228aa-3c62-4359-aec9-ff32bd671c65" /><br>
 <img width="447" height="241" alt="image" src="https://github.com/user-attachments/assets/d0ae60a7-7aaa-4cdf-950e-02d0903269e5" /><br>
----
-
-## Clean Up
-```bash
-terraform destroy -auto-approve
-```
-- Always destroy resources after testing to avoid charges.
-
+- terraform destroy output<br>
+<img width="988" height="384" alt="image" src="https://github.com/user-attachments/assets/b395298a-4bf7-4fe8-b63c-d973247b2182" /><br>
 ---
 
 ## Author
