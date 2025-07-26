@@ -152,6 +152,7 @@ terraform apply -auto-approve
 ---
 
 ## Validation Checklist
+- Env variables setup for local run
 - Docker images built and pushed
 - EC2 instance running Docker
 - Containers launched via user-data
