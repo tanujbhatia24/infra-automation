@@ -26,10 +26,13 @@ share/python-wheels/
 *.egg
 MANIFEST
 node_modules/
+
+.terraform/
 *.tfstate
 *.tfstate.backup
 .crash
 *.log
+.terraform.lock.hcl
 
 
 # PyInstaller
