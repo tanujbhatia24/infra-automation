@@ -156,6 +156,14 @@ terraform apply -auto-approve
 
 ---
 
+## Clean Up
+```bash
+terraform destroy -auto-approve
+```
+- Always destroy resources after testing to avoid charges.
+
+---
+
 ## Validation Checklist
 - Env variables setup for local run
 - Docker images built and pushed
@@ -163,14 +171,6 @@ terraform apply -auto-approve
 - Containers launched via user-data
 - Frontend reachable via public IP
 - Backend services return expected text
-
----
-
-## Clean Up
-```bash
-terraform destroy -auto-approve
-```
-- Always destroy resources after testing to avoid charges.
 
 ---
 
