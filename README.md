@@ -52,7 +52,7 @@ PRODUCT_SERVICE_URL=http://localhost:3002
 **backend/order-service/.env:**
 ```env
 PORT=3004
-MONGODB_URI=mongodb://localhost:27017/ecommerce_orders
+MONGODB_URI=mongodb://mongodb:27017/ecommerce_orders
 CART_SERVICE_URL=http://localhost:3003
 PRODUCT_SERVICE_URL=http://localhost:3002
 USER_SERVICE_URL=http://localhost:3001
