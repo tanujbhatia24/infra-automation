@@ -33,8 +33,8 @@ Build and push Docker images for all services:
 ```bash
 # Build (from inside each service folder or use full path)
 docker build -t <your-dockerhub>/user-service .\user-service
-docker build -t <your-dockerhub>/products-service .\product-service
-docker build -t <your-dockerhub>/orders-service .\order-service
+docker build -t <your-dockerhub>/product-service .\product-service
+docker build -t <your-dockerhub>/order-service .\order-service
 docker build -t <your-dockerhub>/cart-service .\cart-service
 docker build -t <your-dockerhub>/frontend-service .\frontend
 
