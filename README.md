@@ -116,6 +116,14 @@ terraform apply -auto-approve
 
 ---
 
+## Clean Up
+```bash
+terraform destroy -auto-approve
+```
+- Always destroy resources after testing to avoid charges.
+
+---
+
 ## Snapshot
 - dokcer images<br>
 <img width="889" height="161" alt="image" src="https://github.com/user-attachments/assets/a2cb8690-3c76-41f8-8403-bedeb84f3691" /><br>
@@ -130,19 +138,29 @@ terraform apply -auto-approve
 <img width="505" height="227" alt="image" src="https://github.com/user-attachments/assets/5025de0a-4b22-4144-81d9-acfd78ed9284" /><br>
 <img width="423" height="228" alt="image" src="https://github.com/user-attachments/assets/b749bd06-aaf5-48f5-a475-8f0bb4479960" /><br>
 <img width="412" height="233" alt="image" src="https://github.com/user-attachments/assets/5dbf652c-719f-46a3-b117-e78ccb80cb35" /><br>
+- terraform apply output<br>
+<img width="959" height="336" alt="image" src="https://github.com/user-attachments/assets/b925567c-6146-4a97-bf9c-b4240395827f" /><br>
+<img width="900" height="273" alt="image" src="https://github.com/user-attachments/assets/eb247a62-c54a-45ea-ac58-f6d9b91e6879" /><br>
+- AWS EC2 snapshots<br>
+<img width="1355" height="661" alt="image" src="https://github.com/user-attachments/assets/4b1fa98a-5f9f-4b07-9803-bdbf9f636a47" /><br>
+<img width="326" height="73" alt="image" src="https://github.com/user-attachments/assets/05d9066f-62b8-4186-a2d9-8b2b35b74231" /><br>
+<img width="650" height="82" alt="image" src="https://github.com/user-attachments/assets/6e48274a-3f35-40d5-b997-26333e9d58bb" /><br>
+- AWS EC2 frontend service<br>
+<img width="837" height="335" alt="image" src="https://github.com/user-attachments/assets/a19fc52b-0ccf-4dc7-90d9-480855b44849" /><br>
+- AWS EC2 backend services<br>
+<img width="447" height="229" alt="image" src="https://github.com/user-attachments/assets/21896c5b-7b7a-4149-80de-336d429bdead" /><br>
+<img width="482" height="228" alt="image" src="https://github.com/user-attachments/assets/1e9edace-cd3f-4d70-8131-f6c882b46281" /><br>
+<img width="449" height="221" alt="image" src="https://github.com/user-attachments/assets/1f9228aa-3c62-4359-aec9-ff32bd671c65" /><br>
+<img width="447" height="241" alt="image" src="https://github.com/user-attachments/assets/d0ae60a7-7aaa-4cdf-950e-02d0903269e5" /><br>
+- terraform destroy output<br>
+<img width="988" height="384" alt="image" src="https://github.com/user-attachments/assets/b395298a-4bf7-4fe8-b63c-d973247b2182" /><br>
+- AWS EC2 snapshots<br>
+<img width="1340" height="251" alt="image" src="https://github.com/user-attachments/assets/62073a6d-e846-4b98-ae5e-69f68a9fa4e9" /><br>
 ---
 
-## Clean Up
-```bash
-terraform destroy -auto-approve
-```
-- Always destroy resources after testing to avoid charges.
-
----
-
-## Author
-Tanuj Bhatia
-DevOps Automation Engineer
-DockerHub: tanujbhatia24
+## Author<br>
+Tanuj Bhatia<br>
+DevOps Automation Engineer<br>
+DockerHub: tanujbhatia24<br>
 
 ---
