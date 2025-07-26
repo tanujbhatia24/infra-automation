@@ -26,6 +26,47 @@ This project demonstrates how to deploy a Dockerized multi-service Node.js appli
 
 ---
 
+## Set up environment variables
+Create `.env` files in each service directory:
+
+**backend/user-service/.env:**
+```env
+PORT=3001
+MONGODB_URI=mongodb://mongodb:27017/ecommerce_users
+JWT_SECRET=your-jwt-secret-key
+```
+
+**backend/product-service/.env:**
+```env
+PORT=3002
+MONGODB_URI=mongodb://mongodb:27017/ecommerce_products
+```
+
+**backend/cart-service/.env:**
+```env
+PORT=3003
+MONGODB_URI=mongodb://mongodb:27017/ecommerce_carts
+PRODUCT_SERVICE_URL=http://localhost:3002
+```
+
+**backend/order-service/.env:**
+```env
+PORT=3004
+MONGODB_URI=mongodb://localhost:27017/ecommerce_orders
+CART_SERVICE_URL=http://localhost:3003
+PRODUCT_SERVICE_URL=http://localhost:3002
+USER_SERVICE_URL=http://localhost:3001
+```
+
+**frontend/.env:**
+```env
+REACT_APP_USER_SERVICE_URL=http://localhost:3001
+REACT_APP_PRODUCT_SERVICE_URL=http://localhost:3002
+REACT_APP_CART_SERVICE_URL=http://localhost:3003
+REACT_APP_ORDER_SERVICE_URL=http://localhost:3004
+```
+---
+
 ## Docker Image Setup
 
 Build and push Docker images for all services:
@@ -33,8 +74,8 @@ Build and push Docker images for all services:
 ```bash
 # Build (from inside each service folder or use full path)
 docker build -t <your-dockerhub>/user-service .\user-service
-docker build -t <your-dockerhub>/products-service .\product-service
-docker build -t <your-dockerhub>/orders-service .\order-service
+docker build -t <your-dockerhub>/product-service .\product-service
+docker build -t <your-dockerhub>/order-service .\order-service
 docker build -t <your-dockerhub>/cart-service .\cart-service
 docker build -t <your-dockerhub>/frontend-service .\frontend
 
@@ -45,15 +86,18 @@ docker push <your-dockerhub>/orders-service
 docker push <your-dockerhub>/cart-service
 docker push <your-dockerhub>/frontend-service
 
-# Run
-docker run -d -p 3000:3000 tanujbhatia24/frontend-service
-docker run -d -p 3001:3001 tanujbhatia24/user-service
-docker run -d -p 3002:3002 tanujbhatia24/product-service
-docker run -d -p 3003:3003 tanujbhatia24/cart-service
-docker run -d -p 3004:3004 tanujbhatia24/order-service
+# Run to create common network
+docker network create ecommerce-net
 
 # Run Mongo in order to test the backend services
-docker run -d -p 27017:27017 --name mongodb mongo
+docker run -d --name mongodb --network ecommerce-net -p 27017:27017 mongo
+
+#Run
+docker run -d --name frontend-service --network ecommerce-net -p 3000:3000 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts <your-dockerhub>/frontend-service
+docker run -d --name user-service --network ecommerce-net -p 3001:3001 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts <your-dockerhub>/user-service
+docker run -d --name product-service --network ecommerce-net -p 3002:3002 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts <your-dockerhub>/product-service
+docker run -d --name cart-service --network ecommerce-net -p 3003:3003 -e MONGODB_URI=mongodb://mongodb:27017/ecommerce_carts <your-dockerhub>/cart-service
+docker run -d --name order-service --network ecommerce-net -p 3004:3004 -e MONGO_URL=mongodb://mongodb:27017/ecommerce_carts <your-dockerhub>/order-service
 ```
 
 ---
@@ -92,6 +136,11 @@ terraform apply -auto-approve
 - After deployment, Terraform will output:
   ```bash
   frontend_url = http://<PUBLIC_IP>
+  backend_urls :
+    user = http://<PUBLIC_IP>:3001
+    product = http://<PUBLIC_IP>:3002
+    cart = http://<PUBLIC_IP>:3003
+    order = http://<PUBLIC_IP>:3004
   ```
 - You can access:
   - Frontend:
@@ -100,14 +149,15 @@ terraform apply -auto-approve
   - Backend Services:
     - http://<PUBLIC_IP>:3001 → User
     - http://<PUBLIC_IP>:3002 → Products
-    - http://<PUBLIC_IP>:3004 → Orders
     - http://<PUBLIC_IP>:3003 → Cart
+    - http://<PUBLIC_IP>:3004 → Orders
 
 - Each backend returns: "ServiceName Service Running"
 
 ---
 
 ## Validation Checklist
+- Env variables setup for local run
 - Docker images built and pushed
 - EC2 instance running Docker
 - Containers launched via user-data
