@@ -51,6 +51,9 @@ docker run -d -p 3001:3001 tanujbhatia24/user-service
 docker run -d -p 3002:3002 tanujbhatia24/product-service
 docker run -d -p 3003:3003 tanujbhatia24/cart-service
 docker run -d -p 3004:3004 tanujbhatia24/order-service
+
+# Run Mongo in order to test the backend services
+docker run -d -p 27017:27017 --name mongodb mongo
 ```
 
 ---
